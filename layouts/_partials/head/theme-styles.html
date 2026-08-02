@@ -11,6 +11,7 @@
   {{ $styles := resources.Get "scss/coder.scss" | resources.ExecuteAsTemplate "style.coder.css" . | toCSS $cssOpts | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous" media="screen" />
 {{ end }}
+<link rel="stylesheet" href="{{ "css/fontawesome7.css" | relURL }}">
 
 {{ if .Site.Params.rtl }}
   {{ if hugo.IsServer }}
